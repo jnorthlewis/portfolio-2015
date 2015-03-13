@@ -1,7 +1,16 @@
-<footer>
-  <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
-  </div>
+<footer class="bottom">
+
+<div class="container">
+	
+	<nav class="social">
+		<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
+	</nav>
+
+    <p class="copyright">&copy; Jeremy North-Lewis <?php echo date('Y'); ?></p>
+  
+</div><!--END .container-->
+  
+
 </footer>
 
 <script>

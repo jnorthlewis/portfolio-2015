@@ -7,6 +7,19 @@ Author: Jeremy North-Lewis
 Author URI: http://jnorthlewis.com
 */
 
+// NORMALIZE
+@import 'normalize';
+
+// COMMENTS
+@import 'comments';
+
+//FONT FAMILY
+$titleFont: 'PT Sans Narrow', sans-serif;
+$bodyFont: 'PT Sans', sans-serif;
+
+// COLORS
+
+
 
 ////////////////////////////////// D E F A U L T ////////////////////////////////// 
 //////////////////////////////////////////////////////////////////////////////////
@@ -17,17 +30,27 @@ html {
 
 body {
   color: #333;
+  background-color: #f9f9f9;
+  font-family: $bodyFont;
+  font-size: 1.6rem;
+  line-height: 1.6;
 }
 
 .container {
   max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.innerWrapper {
+  width: 80%;
   margin: 0 auto;
 }
 
 .content {
-  float: left;
-  width: 65%;
-  margin-right: 5%;
+  width: 100%;
+  margin: 40px auto 0 auto;
+  height: auto;
 }
 
 .full {
@@ -55,7 +78,8 @@ p {
 
 // images 
 img {
-  max-width: 100%
+  max-width: 100%;
+  height: auto;
 }
 
 // blockquotes
@@ -88,7 +112,7 @@ dd {
 
 // lists
 ul li,ol li {
-  padding: 3px;
+  //padding: 3px;
 }
 
 // PRE
@@ -100,6 +124,42 @@ pre {
   border: 1px solid #ccc;
 }
 
+////////////////////////////////// H E A D E R //////////////////////////////////// 
+//////////////////////////////////////////////////////////////////////////////////
+
+.homepage_header {
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.title_header {
+  padding: 85px 0 150px 0;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  margin-bottom: 40px;
+  h1 {
+    font-family: $titleFont;
+    font-size: 6rem;
+    margin-bottom: 0;
+  }
+  h2 {
+    font-family: $bodyFont;
+    font-size: 3rem;
+    margin: -10px 0 0 0;
+  }
+  p.animated.pulse {
+      animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+      font-size: 2rem;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+}
 
 ////////////////////////////////// S I D E B A R ////////////////////////////////// 
 //////////////////////////////////////////////////////////////////////////////////
@@ -116,35 +176,196 @@ pre {
       list-style: none;
     }
 
+////////////////////////////////// N A V I G A T I O N ////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+
+header.top {
+  background-color: #222;
+}
+
+h2.logo {
+  float: left;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 20px;
+  top: 5px;
+  color: white;
+  letter-spacing: 1px;
+  font-family: $bodyFont;
+  font-weight: 400;
+}
+
+  ul.menu {
+    top:-100px;
+    float: right;
+    margin: 0;
+    padding: 0;
+    li {
+      display:inline-block;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+    a {
+        display: inline-block;
+        padding: 10px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+nav.main_nav {
+  top:-100px;
+  transition: all 0.5s;
+  margin-right: 20px;
+}
+
+body.scrolling {
+  padding-top:42px;
+  nav.main_nav {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top:0;
+    background-color: #222;
+  }
+}
+
+.is_hidden {
+  display: none;
+}
+
+
+////////////////////////////////// C O N T E N T //////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+
+
+.title_holder h2.strikethrough {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.3rem;
+  letter-spacing: 1px;
+  position: relative;
+  &:before {
+    content : '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #CCCCCC;
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+  }
+  span {
+    background: #f9f9f9;
+    padding: 15px;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.project_box {
+  width: 31%;
+  float: left;
+  &:nth-child(2) {
+    margin: 0 3.5%;
+  }
+  img {
+    margin-bottom: 10px;
+  }
+}
+
+h2.project_title {
+  margin: 0;
+  a {
+    text-transform: uppercase;
+    font-family: $bodyFont;
+    letter-spacing: 1px;
+    color: #999;
+    font-size: 1.9rem;
+  }
+}
+
+p.short_desc {
+  margin: 0 0 10px 0;
+}
+
+// live demo box
+p.demo a {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  float: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+// about section
+.about_area {
+  clear: both;
+}
+
+.about_paragraph {
+  width: 80%;
+  margin: 0 auto 40px auto;
+}
+
+.about_info {
+  width: 31%;
+  float: left;
+  &:nth-child(2) {
+    margin: 0 3.5%;
+  }
+  h3 {
+    font-size: 1.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+
+// FLEXSLIDER 
+.flexslider {
+  border: none;
+}
+
+.flex-direction-nav a:before {
+  font-size: 25px;
+}
+
+.flex-control-nav {
+  bottom: 5px;
+  right: -450px;
+}
 
 
 
 ////////////////////////////////// F O O T E R //////////////////////////////////// 
 //////////////////////////////////////////////////////////////////////////////////
 
-footer {
+footer.bottom {
   clear: both;
+  text-align: center;
 }
 
-
-////////////////////////////////// N A V I G A T I O N ////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-
-  ul.menu {
-    margin:0;
-    padding:0;
-  }
-    
-    ul.menu li {
-      display:inline;
-      margin-right: 10px;
+nav.social {
+  li {
+    list-style-type: none;
+    padding: 40px 0 10px;
+    a {
+      padding: 10px;
+      font-size: 2.5rem;
     }
+  }
+}
 
-      ul.menu li a {
-        color:#333;
-        padding:10px;
-        background:#333;
-        color:white;
-      }
-
-
+p.copyright {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: #ccc;
+  margin-top: 0;
+}

@@ -12,11 +12,23 @@ function theme_setup() {
 	*  sizes with add_image_size. */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size(120, 90, true);
-	add_image_size('square', 150, 150, true);
+	add_image_size('hero', 150, 150, true);
+	add_image_size('home_project_piece', 400, 200, true);
+	add_image_size('single_piece', 900, 450, true);
+
 
 
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
+
+	function add_image_size_to_menu($sizes) {
+	    $sizes['square'] = 'Square';
+	    $sizes['home_project_piece'] = 'Home Projects';
+	    $sizes['single_piece'] = 'Single Piece';
+	    return $sizes;
+	}
+
+	add_filter('image_size_names_choose', 'add_image_size_to_menu');
 
 	/* This theme uses wp_nav_menu() in one location.
 	* You can allow clients to create multiple menus by
@@ -165,6 +177,16 @@ function hackeryou_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
+	register_sidebar( array(
+		'name' => 'Secondary Widget Area',
+		'id' => 'secondary-widget-area',
+		'description' => 'The secondary widget area',
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
 }
 
 add_action( 'widgets_init', 'hackeryou_widgets_init' );
@@ -266,3 +288,16 @@ function get_post_parent($post) {
 		return $post->ID;
 	}
 }
+
+//TAKE THE <P> TAGS FROM THE POST IMAGES
+function filter_ptags_on_images($content){
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+add_filter('the_content', 'filter_ptags_on_images');
+
+// ALLOW SVGs
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
