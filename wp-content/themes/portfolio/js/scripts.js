@@ -5,10 +5,7 @@ $(function(){
   }); //END flexslider
 
   
-  $('h2.logo').addClass('is_hidden');
-
-  $('p.animated.pulse').on('click', function(){
-  });
+  $('.home h2.logo').addClass('is_hidden');
 
 $(window).on('scroll',function(){
   
@@ -23,9 +20,9 @@ $(window).on('scroll',function(){
   }
 
   if (scrollPercentage < 0.5) {
-    $('h2.logo').addClass('is_hidden');
+    $('.home h2.logo').addClass('is_hidden');
   } else {
-    $('h2.logo').removeClass('is_hidden');
+    $('.home h2.logo').removeClass('is_hidden');
   }
 
   var opacityFilter =  1 - (scrollPercentage * 2.5);

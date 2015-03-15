@@ -16,31 +16,41 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
+	<div class="posts">
+		<!-- ADDING A FEATURE IMAGE -->
+		<?php the_post_thumbnail( $size, $attr ); ?> 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			
 			<h2 class="entry-title">
-        <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
-          <?php the_title(); ?>
-        </a>
-      </h2>
+	        	<a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
+	          	<?php the_title(); ?></a>
+      		</h2>
+      		<p class="postDate"><?php echo get_the_date('F j, Y'); ?></p>
 
 			<section class="entry-content">
-				<?php the_content('Continue reading <span class="meta-nav">&rarr;</span>'); ?>
+				<!-- CLIPPING BLOG POSTS. SETTINGS ARE IN FUNCTION.PHP -->
+				<?php the_excerpt(); ?>
 				<?php wp_link_pages( array(
-          'before' => '<div class="page-link"> Pages:',
-          'after' => '</div>'
-        )); ?>
+		          'before' => '<div class="page-link"> Pages:',
+		          'after' => '</div>'
+		        )); ?>
 			</section><!-- .entry-content -->
 
-			<footer>
-				<p><?php the_tags('Tags: ', ', ', '<br>'); ?> Posted in <?php the_category(', '); ?></p>
-        <p><?php comments_popup_link('Respond to this post &raquo;', '1 Response &raquo;', '% Responses &raquo;'); ?></p>
-        <p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
+			<footer class="blogPostFooter clearfix">
+				
+				<!-- CATEGORY BUTTON -->
+				<p class="categoryButton"><?php the_category(', '); ?></p>
+				
+				<!-- LIKE BUTTON --> 
+				<?php if(function_exists('wp_ulike')) wp_ulike('get'); ?>
+
+		        <!-- <p><?php comments_popup_link('Respond to this post &raquo;', '1 Response &raquo;', '% Responses &raquo;'); ?></p> -->
+		        <!-- <p class="editButton"><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p> -->
 			</footer>
 
 		</article><!-- #post-## -->
-
 		<?php comments_template( '', true ); ?>
-
+	</div><!--END .posts-->
 
 <?php endwhile; // End the loop. Whew. ?>
 

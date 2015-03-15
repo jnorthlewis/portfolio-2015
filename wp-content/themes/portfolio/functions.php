@@ -13,8 +13,10 @@ function theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size(120, 90, true);
 	add_image_size('hero', 150, 150, true);
-	add_image_size('home_project_piece', 400, 200, true);
+	add_image_size('home_project_piece', 400, 300, true);
 	add_image_size('single_piece', 900, 450, true);
+	add_image_size('blog_default', 900, 9999, false);
+
 
 
 
@@ -25,6 +27,7 @@ function theme_setup() {
 	    $sizes['square'] = 'Square';
 	    $sizes['home_project_piece'] = 'Home Projects';
 	    $sizes['single_piece'] = 'Single Piece';
+	    $sizes['blog_default'] = 'Blog Default';
 	    return $sizes;
 	}
 
@@ -136,14 +139,16 @@ add_filter( 'excerpt_length', 'hackeryou_excerpt_length' );
  * Returns a "Continue Reading" link for excerpts
  */
 function hackeryou_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">Continue reading <span class="meta-nav">&rarr;</span></a>';
+	// return ' <a href="'. get_permalink() . '">Continue reading <span class="meta-nav">&rarr;</span></a>';
+	return ' <a href="'. get_permalink() . '" class="read_more_button">read more</a>';
 }
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and hackeryou_continue_reading_link().
  */
 function hackeryou_auto_excerpt_more( $more ) {
-	return ' &hellip;' . hackeryou_continue_reading_link();
+	//return ' &hellip;' . hackeryou_continue_reading_link();
+	return  hackeryou_continue_reading_link();
 }
 add_filter( 'excerpt_more', 'hackeryou_auto_excerpt_more' );
 

@@ -1,17 +1,16 @@
-<footer class="bottom">
-
 <div class="container">
-	
-	<nav class="social">
-		<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
-	</nav>
+	<footer class="bottom">
 
-    <p class="copyright">&copy; Jeremy North-Lewis <?php echo date('Y'); ?></p>
-  
+		<nav class="social">
+			<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
+		</nav>
+
+		<p class="copyright">&copy; Jeremy North-Lewis <?php echo date('Y'); ?></p>
+		 
+	</footer>
 </div><!--END .container-->
   
 
-</footer>
 
 <script>
 /* Google Analytics! */

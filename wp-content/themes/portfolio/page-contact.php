@@ -12,8 +12,11 @@ get_header();  ?>
     <?php // Start the loop ?>
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-      <h2><?php the_title(); ?></h2>
+      <div class="title_holder">
+      	<h2 class="contact_title"><span><?php the_title(); ?></span></h2>
+      </div>
       <?php the_content(); ?>
+      <?php the_field('contact_form') ?>
 
     <?php endwhile; // end the loop?>
   </div> <!-- /.container -->

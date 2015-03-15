@@ -8,9 +8,10 @@
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
   <!-- FAVICON -->
-
+  <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png" />
+  
   <!-- GOOGLE FONTS -->
-  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Sans+Narrow:700' rel='stylesheet' type='text/css' />
+   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic' rel='stylesheet' type='text/css' />
 
   <!-- FONT AWESOME -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
@@ -33,9 +34,8 @@
 
 <header class="top clearfix">
   
-
-  <nav class="main_nav">
-    <h2 class="logo"><?php bloginfo( 'name' ); ?> </h2>
+  <nav class="main_nav clearfix">
+    <h2 class="logo is_hidden"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h2>
     <?php wp_nav_menu( array(
       'container' => false,
       'theme_location' => 'primary'
