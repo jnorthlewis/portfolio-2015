@@ -19,15 +19,20 @@
 
         <h2 class="single_project_title"><?php the_title(); ?></h2>
         <?php the_content(); ?>
-        <p class="link_button clearfix"><a href="<?php the_field('live_demo'); ?>" target="_blank">live demo</a></p>
-        <p class="link_button clearfix"><a href="<?php the_field('github'); ?>" target="_blank">github</a></p>
         
-        <!-- <div class="skills">
+        <div class="skills">
           <?php $skills = get_the_terms($post->ID, 'skills used', '', ''); ?>
           <?php foreach ($skills as $skill) {
-            echo "<span class='skill'>" . $skill->name . "</span>";
+            echo "<span class='skill_box'>" . $skill->name . "</span>";
           } ?>
-        </div> -->
+        </div>
+
+        <p class="link_button clearfix"><a href="<?php the_field('live_demo'); ?>" target="_blank">live demo</a></p>
+        
+        <?php if(get_field('github')) : ?>
+          <p class="link_button clearfix"><a href="<?php the_field('github'); ?>" target="_blank">github</a></p>
+        <?php endif; ?>
+        
         
         <div id="nav-below" class="navigation clearfix">
           <p class="nav-previous"><?php previous_post_link('%link', '&larr; %title'); ?></p>

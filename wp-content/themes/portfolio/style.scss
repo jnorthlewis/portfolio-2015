@@ -13,10 +13,7 @@ Author URI: http://jnorthlewis.com
 // COMMENTS
 @import 'comments';
 
-// BLOG 
-//@import 'blog';
-
-//FONT FAMILY
+// FONT FAMILY
 $font: 'Lato', sans-serif;
 
 // COLORS
@@ -24,6 +21,8 @@ $bodytext: #202020;
 $links: #999;
 $line: #e5e5e5;
 $hover: #ebdf23;
+
+// TRANSITION
 $transition: all 0.2s ease-in;
 
 
@@ -36,7 +35,7 @@ html {
 
 body {
   color: $bodytext;
-  background-color: #f9f9f9;
+  background-color: #fff;
   font-family: $font;
   font-weight: 300;
   font-size: 1.6rem;
@@ -45,11 +44,6 @@ body {
 
 .container {
   max-width: 1200px;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.innerWrapper {
   width: 80%;
   margin: 0 auto;
 }
@@ -78,41 +72,7 @@ img {
   height: auto;
 }
 
-// blockquotes
-blockquote {
-  background: #F7F7F7;
-  margin: 0;
-  padding: 20px;
-}
-  blockquote p {
-    margin-top: 0;
-  }
-
-// tables
-table td {
-  padding: 10px;
-}
-table tr td:first {
-  padding-right: 0;
-}
-
-// def lists
-dt {
-  font-weight: 600;
-  padding-bottom: 5px;
-}
-dd {
-  padding: 10px;
-  margin-left: 10px;
-}
-
-// lists
-ul li,ol li {
-
-}
-
 // PRE
-
 pre {
   background: #F7F7F7;
   padding: 10px;
@@ -133,7 +93,7 @@ h2.logo {
   top: 14px;
   letter-spacing: 1px;
   font-family: $font;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.5rem;
 
   a {
@@ -145,36 +105,41 @@ h2.logo {
   }
 }
 
-  ul.menu {
-    //top:-100px;
-    float: right;
-    margin: 0;
-    padding: 0;
-    li {
-      display:inline-block;
-      margin-right: 10px;
-      &:last-child {
-        margin-right: 0;
-      }
-    a {
-        display: inline-block;
-        padding: 15px;
-        color: $links;
-        font-size: 1.4rem;
-        font-weight: 300;
-        text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: $transition;
-        &:hover {
-          color: $hover;
-        }
+ul.menu {
+  //top:-100px;
+  float: right;
+  margin: 0;
+  padding: 0;
+  li {
+    display:inline-block;
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+  a {
+      display: inline-block;
+      padding: 15px;
+      color: $links;
+      font-size: 1.4rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: $transition;
+      &:hover {
+        color: $hover;
       }
     }
   }
+}
 
-ul.menu li.current_page_item a {
+
+
+ul.menu li.current-menu-item a, ul.menu li.current_page_parent a {
   color: $hover;
+}
+
+body.single-portfolio ul.menu li.current_page_parent a {
+  color: $links
 }
 
 nav.main_nav {
@@ -194,7 +159,7 @@ body:not(.home) {
     z-index: 2;
     top:0;
     left: 0;
-    background-color: #202020;
+    background-color: $bodytext;
     ul.menu {
       margin-right: 20px;
     }
@@ -223,7 +188,7 @@ body:not(.home) {
   z-index: 100000;
   top:0;
   left: 0;
-  background-color: #222;
+  background-color: $bodytext;
 }
 
 .is_hidden {
@@ -239,7 +204,7 @@ body:not(.home) {
   background-size: cover;
   background-repeat: no-repeat;
 
-  padding: 100px;
+  padding: 120px;
   margin-bottom: 50px;
 }
 
@@ -261,7 +226,7 @@ body:not(.home) {
     letter-spacing: 2px;
     font-weight: 400;
     font-size: 2rem;
-    margin: 0 0 0 0;
+    margin: 5px 0 0 0;
     border: 1px solid #fff;
     display: inline-block;
     padding: 5px 10px;
@@ -272,8 +237,10 @@ body:not(.home) {
 //////////////////////////////////////////////////////////////////////////////////
 
 .sidebar {
-  width: 30%;
-  float: left;
+  width:20%;
+  float:left;
+  clear: both;
+  margin-right: 10%
 }
   .sidebar ul {
     margin: 0;
@@ -282,6 +249,93 @@ body:not(.home) {
     .sidebar ul li {
       list-style: none;
     }
+
+h3.widget-title {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.6rem;
+  margin: 0 0 10px 0;
+  color: $bodytext;
+}
+
+li.widget_recent_entries {
+  margin-bottom: 20px;
+  ul li a {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: $links;
+    transition: $transition;
+    &:hover {
+      color: $bodytext;
+    }
+  }
+}
+
+// I N S T A G R A M
+
+#sb_instagram #sbi_images .sbi_item.sbi_type_image {
+  width: 45%!important;
+  margin-bottom: 20px!important;
+  &:nth-child(2n+1) {
+    margin-right: 10%!important;
+  }
+}
+
+div.sbi_follow_btn {
+  margin-left: 0!important;
+}
+
+#sb_instagram #sbi_load .sbi_follow_btn a {
+  background-color: #fff;
+  margin: 0 10px 0 0;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid $links;
+  border-radius: 0;
+  float: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  color: $links;
+  transition: $transition;
+  opacity:1;
+  &:hover {
+    background-color: $bodytext;
+    border: 1px solid $bodytext;
+    color: $hover;
+  }
+}
+
+.textwidget #sb_instagram {
+  margin-bottom: 30px;
+}
+
+// S E A R C H
+
+input#s {
+  margin-bottom: 5px;
+  width: 100%;
+  font-weight: 300;
+}
+
+input.searchsubmit {
+  padding: 5px 10px;
+  border: 1px solid $links;
+  float: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  color: $links;
+  background-color: #fff;
+  transition: $transition;
+  &:hover {
+    background-color: $bodytext;
+    border: 1px solid $bodytext;
+    color: $hover;
+  }
+}
 
 ////////////////////////////////// C O N T E N T //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -308,7 +362,8 @@ body:not(.home) {
     z-index: 0;
   }
   span {
-    background: #f9f9f9;
+    background: #fff;
+    // left: 20px;
     padding: 0 25px;
     position: relative;
     z-index: 1;
@@ -316,34 +371,14 @@ body:not(.home) {
 }
 
 // about section
-.about_area {
-  clear: both;
-  margin-bottom: 50px;
-}
 
 .about_paragraph {
-  
-  margin: 0 auto 40px auto;
+  margin: 0 auto 30px auto;
   p {
-    margin: 0;
+    margin: 0 0 10px 0;
   }
-}
-
-.about_info {
-  width: 31%;
-  float: left;
-  text-align: center;
-  &:nth-child(2) {
-    margin: 0 3.5%;
-  }
-  h3 {
-    font-size: 1.9rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin: 0 auto;
-    padding: 10px;
-    border: 1px solid #ccc;
+  p span.strong_skills {
+    font-weight: 400;
   }
 }
 
@@ -362,32 +397,32 @@ section#project_area {
 
 .project_image {
   margin-bottom: 20px;
-  float: left;
   position: relative;
   
   img {
     float: left;
-    a {
-      transition: $transition;
-    }
   }
   .overlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.3);
-    display: none;
+    background-color: rgba(0,0,0,0.5);
+    // display: none;
+    opacity: 0;
     left: 0;
     top: 0;
+    transition: $transition;
   }
   &:hover .overlay {
     display: block;
+    opacity: 1;
   }
 }
 
 h2.project_title {
-  margin: 0 0 10px 0;
+    margin: 0 0 10px 0;
   a {
+    float: left;
     text-transform: uppercase;
     font-family: $font;
     letter-spacing: 1px;
@@ -403,34 +438,37 @@ h2.project_title {
 
 p.short_desc {
   margin: 0 0 20px 0;
+  clear: both;
 }
 
 // live demo box
 p.link_button {
-  margin: 0 10px 0 0;
-  display: inline-block;
   a {
+    margin: 0 10px 0 0;
+    display: inline-block;
     padding: 5px 10px;
-    border: 1px solid $links;
+    border: 2px solid $bodytext;
+    background-color: $bodytext;
     float: left;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 1.2rem;
     color: $links;
+    font-weight: 400;
     transition: $transition;
     &:hover {
-      background-color: $bodytext;
-      border: 1px solid $bodytext;
       color: $hover;
     }
   }
 }
 
-// S I N G L E  P O R T F O L I O  P A G E S
+////////////////////////////////// P O R T F O L I O  P I E C E S /////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 // FLEXSLIDER 
 .flexslider {
-  border: none;
+  border: 1px solid $links;
+  border-radius: 0;
   position: relative;
   margin: 0 0 40px 0;
 }
@@ -455,12 +493,148 @@ h2.single_project_title {
     margin: 0 0 30px 0;
   }
   p.link_button {
-    margin-bottom: 30px;
+     display: inline-block;
+     margin-top: 0;
   }
   .navigation p {
     margin: 0 0 10px 0;
+    clear: both;
     a {
       text-transform: uppercase;
+      color: $links;
+      font-weight: 400;
+      transition: $transition;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      &:hover {
+        color: $bodytext;
+      }
+    }
+  }
+
+  //TAXONOMY
+  span.skill_box {
+    margin: 0 10px 10px 0;
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid $links;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    color: $links;
+  }
+
+  p.nav-next {
+    float: right;
+    display: inline-block;
+  }
+  p.nav-previous {
+    display: inline-block;
+  }
+}
+
+////////////////////////////////// B L O G //////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+
+// index page
+
+.content_blog {
+  width: 65%;
+  float: left;
+  margin: 0 auto 60px auto;
+}
+
+div.posts {
+  margin-bottom: 40px;
+  img.attachment-.wp-post-image {
+    float: left;
+    margin-bottom: 20px;
+  }
+}
+
+h2.entry_title {
+    margin: 0 0 10px 0;
+  a {
+    float: left;
+    text-transform: uppercase;
+    font-family: $font;
+    letter-spacing: 1px;
+    color: $links;
+    font-weight: 400;
+    font-size: 1.9rem;
+    transition: $transition;
+    &:hover {
+      color: $bodytext;
+    }
+  }
+}
+
+p.post_date, div.entry-meta.post_date {
+  margin: 0 0 10px 0;
+  float: left;
+  clear: both;
+  color: $links;
+  text-transform: uppercase;
+}
+
+section.entry-content {
+  clear: both;
+  p {
+    float: left;
+    margin: 0; 
+  }
+}
+
+a.read_more_button {
+  display: block;
+  float: left;
+  padding: 5px 10px;
+  border: 2px solid $bodytext;
+  background-color: $bodytext;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  color: $links;
+  font-weight: 400;
+  transition: $transition;
+  margin-top: 20px;
+  &:hover {
+    color: $hover;
+  }
+}
+
+// blog posts page
+
+h1.entry_title {
+    margin: 0 0 10px 0;
+    float: left;
+    text-transform: uppercase;
+    font-family: $font;
+    letter-spacing: 1px;
+    color: $bodytext;
+    font-weight: 400;
+    font-size: 2rem;
+    transition: $transition;
+}
+
+div.entry-content {
+  p {
+    clear: both;
+    margin: 0 0 20px 0;
+  }
+  img {
+    margin-bottom: 10px;
+    float: left;
+  }
+}
+
+div.content_blog {
+  .navigation p {
+    margin: 0;
+    a {
+      text-transform: uppercase;
+      font-weight: 400;
       color: $links;
       transition: $transition;
       font-size: 1.3rem;
@@ -479,24 +653,9 @@ h2.single_project_title {
   }
 }
 
-// B L O G
 
-.content_blog_index {
-  width: 80%;
-  margin: 0 auto 60px auto;
-}
-
-.container_blog_post {
-  width: 70%;
-  margin: 0 auto;
-}
-
-div.posts {
-  margin-bottom: 40px;
-}
-
-
-// C O N T A C T  P A G E
+////////////////////////////////// C O N T A C T //////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
 
 form.wpcf7-form {
   margin-bottom: 50px;
@@ -504,13 +663,13 @@ form.wpcf7-form {
 
 .title_holder h2.contact_title {
   text-transform: uppercase;
-  //text-align: center;
+  text-align: center;
   font-size: 2rem;
   font-weight: 400;
   color: $bodytext;
   letter-spacing: 1px;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-top: 0;
   &:before {
     content : '';
@@ -523,11 +682,20 @@ form.wpcf7-form {
     z-index: 0;
   }
   span {
-    background: #f9f9f9;
-    left: 20px;
+    background: #fff;
+    // left: 20px;
     padding: 0 25px;
     position: relative;
     z-index: 1;
+  }
+}
+
+a.email_address {
+  color: $links;
+  font-weight: 400;
+  transition: $transition;
+  &:hover {
+    color: $bodytext;
   }
 }
 
@@ -548,21 +716,34 @@ span.required {
   color: #f00;
 }
 
-input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required, input.wpcf7-form-control.wpcf7-text, textarea.wpcf7-form-control.wpcf7-textarea, input.wpcf7-form-control.wpcf7-captchar, :focus {
-  outline: none;
-  font-weight: 300;
-  font-size: 1.3rem;
+input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required,
+input.wpcf7-form-control.wpcf7-text,
+textarea.wpcf7-form-control.wpcf7-textarea,
+input.wpcf7-form-control.wpcf7-captchar {
+    padding: 5px;
+    border: 1px solid $links;
+    outline: none;
+    font-size: 1.3rem;
+    font-weight: 300;
+    &:focus {
+      border-color: $bodytext;
+    } 
 }
 
 input.wpcf7-form-control.wpcf7-submit {
   padding: 5px 10px;
-    border: 1px solid $links;
+    border: 1px solid $bodytext;
     float: left;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 1.2rem;
     color: $links;
-    background-color: #f9f9f9;
+    background-color: #fff;
+    transition: $transition;
+    background-color: $bodytext;
+    &:hover {
+      color: $hover;
+    }
 }
 
 textarea.wpcf7-form-control.wpcf7-textarea {
@@ -608,3 +789,5 @@ p.copyright {
   color: #ccc;
   margin: 0;
 }
+
+@import 'mq';

@@ -9,12 +9,12 @@ get_header();  ?>
 <div class="main">
 
   <?php $headerImage = get_post_thumbnail_id(); 
-    $headerImageUrl = wp_get_attachment_image_src( $headerImage, 'full', true );
+    $headerImageUrl = wp_get_attachment_image_src( $headerImage, 'full', false );
     $headerIMG = $headerImageUrl[0];
   ?>
   
   <header class="homepage_header" style="background-image: url('<?php echo $headerIMG ?>')">
-    <div class="innerWrapper">
+    <div class="container">
       
       <div class="title_header">    
         <h1> 
@@ -25,7 +25,7 @@ get_header();  ?>
         </h2>
       </div><!--END .title_header-->
     
-    </div><!--END .innerWrapper-->
+    </div><!-- END .container -->
   </header><!--END .homepage_header"-->
 
   <div class="container clearfix">
@@ -49,6 +49,7 @@ get_header();  ?>
     </div><!--END .about_paragraph-->
 
     <!-- PORTFOLIO PIECES -->
+    <div id="work"></div>
     <div class="title_holder">
       <h2 class="strikethrough">
         <span><?php the_field('section_title_1'); ?></span>
@@ -57,20 +58,22 @@ get_header();  ?>
 
     <?php $portfolioPosts = new WP_Query(array(
       'post_type' => 'portfolio', //portfolio pieces
-      'posts_per_page' => 3
+      'posts_per_page' => 3,
+      "order" => 'ASC'
     )); ?>
 
     <section class="project_area clearfix" id="project_area">
       <?php if($portfolioPosts->have_posts()) while($portfolioPosts->have_posts()) : $portfolioPosts ->the_post(); ?>
         <section class="project_box clearfix">
           
-          <div class="project_image">
+          <div class="project_image clearfix">
             <a href="<?php echo get_permalink(); ?>">
-              <div class="overlay"></div><?php the_post_thumbnail('home_project_piece'); ?>
+              <div class="overlay"></div>
+              <?php the_post_thumbnail('home_project_piece'); ?>
             </a> 
           </div>
 
-          <h2 class="project_title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+          <h2 class="project_title clearfix"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
           <p class="short_desc"><?php the_field('short_description'); ?></p>
           <p class="link_button clearfix"><a href="<?php the_field('live_demo'); ?>" target="_blank">live demo</a></p>
        

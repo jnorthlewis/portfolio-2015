@@ -16,18 +16,18 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-	<div class="posts">
+	<div class="posts clearfix">
 		<!-- ADDING A FEATURE IMAGE -->
 		<?php the_post_thumbnail( $size, $attr ); ?> 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> class="clearfix">
 			
-			<h2 class="entry-title">
+			<h2 class="entry_title clearfix">
 	        	<a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
 	          	<?php the_title(); ?></a>
       		</h2>
-      		<p class="postDate"><?php echo get_the_date('F j, Y'); ?></p>
+      		<p class="post_date"><?php echo get_the_date('F j, Y'); ?></p>
 
-			<section class="entry-content">
+			<section class="entry-content clearfix">
 				<!-- CLIPPING BLOG POSTS. SETTINGS ARE IN FUNCTION.PHP -->
 				<?php the_excerpt(); ?>
 				<?php wp_link_pages( array(
@@ -36,10 +36,10 @@
 		        )); ?>
 			</section><!-- .entry-content -->
 
-			<footer class="blogPostFooter clearfix">
+			<footer class="blog_post_footer">
 				
 				<!-- CATEGORY BUTTON -->
-				<p class="categoryButton"><?php the_category(', '); ?></p>
+				<!-- <p class="categoryButton"><?php the_category(', '); ?></p> -->
 				
 				<!-- LIKE BUTTON --> 
 				<?php if(function_exists('wp_ulike')) wp_ulike('get'); ?>
