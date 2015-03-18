@@ -83,6 +83,7 @@ pre {
 ////////////////////////////////// N A V I G A T I O N ////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 
+
 h2.logo {
   float: left;
   text-transform: uppercase;
@@ -105,8 +106,22 @@ h2.logo {
   }
 }
 
+a.burg {
+  margin: 0;
+  display: none;
+  color: $links;
+  font-size: 2rem;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+body.scrolling {
+  a.burg {
+    margin: 10px 20px 0 0;
+  }
+}
+
 ul.menu {
-  //top:-100px;
   float: right;
   margin: 0;
   padding: 0;
@@ -204,7 +219,7 @@ body:not(.home) {
   background-size: cover;
   background-repeat: no-repeat;
 
-  padding: 120px;
+  padding: 120px 0;
   margin-bottom: 50px;
 }
 
@@ -370,10 +385,10 @@ input.searchsubmit {
   }
 }
 
-// about section
+// ABOUT SECTION
 
 .about_paragraph {
-  margin: 0 auto 30px auto;
+  margin: -10px auto 30px auto;
   p {
     margin: 0 0 10px 0;
   }
@@ -382,7 +397,7 @@ input.searchsubmit {
   }
 }
 
-// project section
+// PROJECT SECTION
 section#project_area {
   margin-bottom: 60px;
 }
@@ -398,10 +413,13 @@ section#project_area {
 .project_image {
   margin-bottom: 20px;
   position: relative;
+  float:left;
+  width:100%;
   
   img {
     float: left;
   }
+
   .overlay {
     position: absolute;
     width: 100%;
@@ -417,6 +435,11 @@ section#project_area {
     display: block;
     opacity: 1;
   }
+}
+
+.project_info {
+  float:left;
+  width:100%;
 }
 
 h2.project_title {
@@ -470,7 +493,9 @@ p.link_button {
   border: 1px solid $links;
   border-radius: 0;
   position: relative;
-  margin: 0 0 40px 0;
+  margin: 0 0 30px 0;
+  z-index: 1;
+
 }
 
 .flex-direction-nav a:before {
@@ -497,7 +522,7 @@ h2.single_project_title {
      margin-top: 0;
   }
   .navigation p {
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
     clear: both;
     a {
       text-transform: uppercase;
@@ -691,11 +716,11 @@ form.wpcf7-form {
 }
 
 a.email_address {
-  color: $links;
+  color: $bodytext;
   font-weight: 400;
   transition: $transition;
   &:hover {
-    color: $bodytext;
+    color: $links;
   }
 }
 
@@ -731,7 +756,7 @@ input.wpcf7-form-control.wpcf7-captchar {
 }
 
 input.wpcf7-form-control.wpcf7-submit {
-  padding: 5px 10px;
+    padding: 5px 10px;
     border: 1px solid $bodytext;
     float: left;
     text-transform: uppercase;
@@ -744,11 +769,34 @@ input.wpcf7-form-control.wpcf7-submit {
     &:hover {
       color: $hover;
     }
+    &:focus {
+      outline: none;
+    }
 }
 
 textarea.wpcf7-form-control.wpcf7-textarea {
   font-size: 1.3rem;
   font-weight: 300;
+}
+
+.wpcf7-form.invalid div.wpcf7-validation-errors {
+  border: none;
+  font-weight: 400;
+}
+
+.wpcf7 div.wpcf7-mail-sent-ok {
+  border: none;
+  font-weight: 400;
+}
+
+span.wpcf7-not-valid-tip {
+  margin-top: 5px;
+}
+
+.wpcf7-form-control-wrap.captcha-962 span.wpcf7-not-valid-tip {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
 

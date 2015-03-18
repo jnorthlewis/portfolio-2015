@@ -7,6 +7,11 @@ $(function(){
   
   $('.home h2.logo').addClass('is_hidden');
 
+  $('a.burg').on('click', function(e){
+      e.preventDefault();
+      $('#menu-main').toggleClass('show');
+  });
+
 $(window).on('scroll',function(){
   
   var windowHeight = $(window).height();

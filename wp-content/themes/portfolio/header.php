@@ -35,6 +35,9 @@
 <header class="top clearfix">
   
   <nav class="main_nav clearfix">
+  <div class="navicon clearfix">
+    <a href="#" class="burg"><i class="fa fa-navicon"></i></a>
+  </div>
     <h2 class="logo is_hidden"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h2>
     <?php wp_nav_menu( array(
       'container' => false,

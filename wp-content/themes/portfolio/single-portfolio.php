@@ -45,7 +45,7 @@
 
     </div> <!-- END .content_single-->
 
-  </div> <!-- /.container -->
-</div> <!-- /.main -->
+  </div> <!-- END .container -->
+</div> <!-- END .main -->
 
 <?php get_footer(); ?>

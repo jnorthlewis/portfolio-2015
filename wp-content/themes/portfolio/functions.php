@@ -13,7 +13,7 @@ function theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size(120, 90, true);
 	add_image_size('hero', 150, 150, true);
-	add_image_size('home_project_piece', 400, 300, true);
+	add_image_size('home_project_piece', 500, 400, true);
 	add_image_size('single_piece', 900, 450, true);
 	add_image_size('blog_default', 900, 9999, false);
 

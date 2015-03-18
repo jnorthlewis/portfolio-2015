@@ -19,7 +19,7 @@ get_header();  ?>
       <?php the_field('contact_form') ?>
 
     <?php endwhile; // end the loop?>
-  </div> <!-- /.container -->
-</div> <!-- /.main -->
+  </div> <!-- END .container -->
+</div> <!-- END .main -->
 
 <?php get_footer(); ?>
