@@ -73,9 +73,9 @@ get_header();  ?>
           </div> <!--END project_image-->
           
           <div class="project_info">
-            <h2 class="project_title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <h2 class="project_title clearfix"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
             <p class="short_desc"><?php the_field('short_description'); ?></p>
-            <p class="link_button"><a href="<?php the_field('live_demo'); ?>" target="_blank">live demo</a></p>
+            <p class="link_button clearfix"><a href="<?php the_field('live_demo'); ?>" target="_blank">live demo</a></p>
           </div><!-- END .project_info -->
        
         </section><!--END .project_box-->

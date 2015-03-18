@@ -33,7 +33,8 @@ $(window).on('scroll',function(){
   var opacityFilter =  1 - (scrollPercentage * 2.5);
 
   	$('.title_header').css({
-  		'-webkit-filter' : 'opacity('+ opacityFilter +')'
+  		'-webkit-filter' : 'opacity('+ opacityFilter +')',
+      'filter': 'opacity('+ opacityFilter +')'
   	});
 
  }); // END on scroll

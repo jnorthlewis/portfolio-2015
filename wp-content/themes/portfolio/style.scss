@@ -186,11 +186,13 @@ body:not(.home) {
     position: relative;
     right: 0;
     top: 0;
+    margin-bottom: 50px;
+    height: 50px;
   }
   nav.main_nav {
-    position: relative;
+    //position: relative;
     width: 100%;
-    margin-bottom: 50px;
+    //margin-bottom: 50px;
   }
   h2.logo {
     display: block;
@@ -391,6 +393,18 @@ input.searchsubmit {
   margin: -10px auto 30px auto;
   p {
     margin: 0 0 10px 0;
+    font-size: 1.8rem;
+    a {
+      color: $links;
+      transition: $transition;
+      font-weight: 400;
+      &:hover {
+        color: $bodytext
+      }
+    }
+    strong {
+      font-weight: 400;
+    }
   }
   p span.strong_skills {
     font-weight: 400;
@@ -629,6 +643,29 @@ a.read_more_button {
   }
 }
 
+@mixin coolbutton() {
+  display: block;
+  float: left;
+  padding: 5px 10px;
+  border: 2px solid $bodytext;
+  background-color: $bodytext;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  color: $links;
+  font-weight: 400;
+  transition: $transition;
+  margin-top: 20px;
+  &:hover {
+    color: $hover;
+  }
+}
+
+a.read_all_about_it {
+  // @extend a.read_more_button;
+  // coolbutton();
+}
+
 // blog posts page
 
 h1.entry_title {
@@ -715,6 +752,23 @@ form.wpcf7-form {
   }
 }
 
+.contact_main {
+  width: 80%;
+  margin: 0 auto;
+  .contact_description {
+    float: left;
+    width: 40%;
+    margin-right: 5%;
+    p {
+      font-size: 1.9rem;
+    }
+  }
+  .contact_form {
+    float: left;
+    width: 55%;
+  }
+}
+
 a.email_address {
   color: $bodytext;
   font-weight: 400;
@@ -734,13 +788,15 @@ p.form_field_name {
   margin-bottom: 5px;
   letter-spacing: 1px;
   color: $links;
-  width: 50%;
 }
 
 span.required {
   color: #f00;
 }
 
+
+// TCS - overriding styles in the plugin..
+// Forgive me 
 input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required,
 input.wpcf7-form-control.wpcf7-text,
 textarea.wpcf7-form-control.wpcf7-textarea,
@@ -750,6 +806,7 @@ input.wpcf7-form-control.wpcf7-captchar {
     outline: none;
     font-size: 1.3rem;
     font-weight: 300;
+    width: 100%;
     &:focus {
       border-color: $bodytext;
     } 

@@ -446,11 +446,11 @@ body.scrolling nav.main_nav, body:not(.home) nav.main_nav {
 body:not(.home) header.top {
   position: relative;
   right: 0;
-  top: 0; }
+  top: 0;
+  margin-bottom: 50px;
+  height: 50px; }
 body:not(.home) nav.main_nav {
-  position: relative;
-  width: 100%;
-  margin-bottom: 50px; }
+  width: 100%; }
 body:not(.home) h2.logo {
   display: block; }
 
@@ -606,7 +606,16 @@ input.searchsubmit {
 .about_paragraph {
   margin: -10px auto 30px auto; }
   .about_paragraph p {
-    margin: 0 0 10px 0; }
+    margin: 0 0 10px 0;
+    font-size: 1.8rem; }
+    .about_paragraph p a {
+      color: #999;
+      transition: all 0.2s ease-in;
+      font-weight: 400; }
+      .about_paragraph p a:hover {
+        color: #202020; }
+    .about_paragraph p strong {
+      font-weight: 400; }
   .about_paragraph p span.strong_skills {
     font-weight: 400; }
 
@@ -845,6 +854,19 @@ form.wpcf7-form {
     position: relative;
     z-index: 1; }
 
+.contact_main {
+  width: 80%;
+  margin: 0 auto; }
+  .contact_main .contact_description {
+    float: left;
+    width: 40%;
+    margin-right: 5%; }
+    .contact_main .contact_description p {
+      font-size: 1.9rem; }
+  .contact_main .contact_form {
+    float: left;
+    width: 55%; }
+
 a.email_address {
   color: #202020;
   font-weight: 400;
@@ -860,8 +882,7 @@ p.form_field_name {
   font-size: 1.2rem;
   margin-bottom: 5px;
   letter-spacing: 1px;
-  color: #999;
-  width: 50%; }
+  color: #999; }
 
 span.required {
   color: #f00; }
@@ -871,7 +892,8 @@ input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required, input.wpcf7-for
   border: 1px solid #999;
   outline: none;
   font-size: 1.3rem;
-  font-weight: 300; }
+  font-weight: 300;
+  width: 100%; }
   input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required:focus, input.wpcf7-form-control.wpcf7-text:focus, textarea.wpcf7-form-control.wpcf7-textarea:focus, input.wpcf7-form-control.wpcf7-captchar:focus {
     border-color: #202020; }
 
@@ -946,9 +968,13 @@ p.copyright {
   header.homepage_header {
     padding: 85px 0;
     background-attachment: scroll;
-    background-position: top top; } }
+    background-position: top top; }
+  .contact_main {
+    width: 90%; } }
 
 @media all and (max-width: 800px) {
+  .about_paragraph p {
+    font-size: 1.7rem; }
   .project_box {
     width: 100%;
     float: none;
@@ -1009,16 +1035,25 @@ p.copyright {
   .title_header h1 {
     font-size: 3.5rem; } }
 
-@media all and (max-width: 550px) {
+@media all and (max-width: 580px) {
   .project_info, .project_image {
     float: none;
     width: 100%; }
   .project_image {
     margin-right: 0; }
     .project_image img {
-      margin-bottom: 30px; }
+      margin-bottom: 20px; }
   .project_box:nth-child(2) {
-    margin: 0 0 0 0; } }
+    margin: 0 0 0 0; }
+  p.link_button {
+    margin-bottom: 30px; }
+  .contact_main .contact_description {
+    width: 100%;
+    float: none;
+    margin: 0; }
+  .contact_main .contact_form {
+    float: none;
+    width: 100%; } }
 
 @media all and (max-width: 505px) {
   header.homepage_header {

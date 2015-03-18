@@ -11,9 +11,20 @@
 		background-attachment: scroll;
 		background-position: top top;
 	}
+
+	.contact_main {
+		width: 90%;
+	}
+
+
 } // END 830px
 
 @media all and (max-width: 800px) {
+
+	.about_paragraph p {
+		font-size: 1.7rem;
+	}
+
 	.project_box {
 		width: 100%;
 		float: none;
@@ -110,8 +121,12 @@
 
 } // END 680px
 
+@media all and (max-width: 580px) {
+	
+} // END 550px;
 
-@media all and (max-width:550px) {
+
+@media all and (max-width:580px) {
 	.project_info, .project_image {
 		float:none;
 		width:100%;
@@ -119,7 +134,7 @@
 	.project_image {
 		margin-right:0;
 		img {
-			margin-bottom: 30px;
+			margin-bottom: 20px;
 		}
 	}
 	.project_box {
@@ -127,6 +142,22 @@
 			margin:0 0 0 0;
 		}
 	}
+
+	p.link_button {
+		margin-bottom: 30px;
+	}
+
+	.contact_main .contact_description {
+		width: 100%;
+		float: none;
+		margin: 0;
+	}
+
+	.contact_main .contact_form {
+		float: none;
+		width: 100%;
+	}
+
 } // END 550px
 
 @media all and (max-width: 505px) {
@@ -157,6 +188,7 @@
 	.title_header h2 {
 		font-size: 1.7rem;
 	}
+
 } // END 470px
 
 
