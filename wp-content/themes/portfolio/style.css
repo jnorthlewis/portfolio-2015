@@ -467,7 +467,7 @@ body:not(.home) h2.logo {
 
 .homepage_header {
   background-attachment: fixed;
-  background-position: bottom bottom;
+  background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 120px 0;
@@ -944,7 +944,9 @@ p.copyright {
 
 @media all and (max-width: 830px) {
   header.homepage_header {
-    padding: 85px 0; } }
+    padding: 85px 0;
+    background-attachment: scroll;
+    background-position: top top; } }
 
 @media all and (max-width: 800px) {
   .project_box {
