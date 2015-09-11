@@ -58,7 +58,8 @@ get_header();  ?>
     <?php $portfolioPosts = new WP_Query(array(
       'post_type' => 'portfolio', //portfolio pieces
       'posts_per_page' => 3,
-      "order" => 'ASC'
+      "order" => 'DESC',
+      "orderby" => 'meta_value_num'
     )); ?>
 
     <section class="project_area clearfix" id="project_area">
