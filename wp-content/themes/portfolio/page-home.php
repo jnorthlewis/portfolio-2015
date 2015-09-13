@@ -13,10 +13,10 @@ get_header();  ?>
     $headerIMG = $headerImageUrl[0];
   ?>
   
-  <header class="homepage_header" style="background-image: url('<?php echo $headerIMG ?>')">
+  <header class="homepage_header" style="background-image: url('<?php echo $headerIMG ?>')" data-stellar-background-ratio="0.5">
     <div class="container">
       
-      <div class="title_header">    
+      <div class="title_header" data-stellar-ratio="1.5" data-stellar-vertical-offset="300">    
         <h1> 
           <?php the_field('name'); ?>
         </h1>

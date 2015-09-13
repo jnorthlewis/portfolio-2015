@@ -30,7 +30,7 @@ $(window).on('scroll',function(){
     $('.home h2.logo').removeClass('is_hidden');
   }
 
-  var opacityFilter =  1 - (scrollPercentage * 2.5);
+  var opacityFilter =  1 - (scrollPercentage * 4.5);
 
   $('.title_header').css({
   	'-webkit-filter' : 'opacity('+ opacityFilter +')',
@@ -39,7 +39,7 @@ $(window).on('scroll',function(){
 
 }); // END on scroll
 
-if($('.home').length && screen.width > 680) {
+if($(window).width() > 680) {
 
   // darken header
   $('.homepage_header:after')
@@ -56,6 +56,14 @@ if($('.home').length && screen.width > 680) {
   // fade in nav
   $('nav.main_nav')
     .delay(2300).velocity({opacity: 1}, {duration : 700 });
+
+
+  $.stellar({
+    horizontalScrolling: false,
+    scrollProperty: 'scroll',
+    hideDistantElements: false
+  });
+
 }
 	
 }); // END document ready
