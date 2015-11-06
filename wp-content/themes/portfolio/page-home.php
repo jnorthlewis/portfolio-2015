@@ -16,7 +16,7 @@ get_header();  ?>
   <header class="homepage_header" style="background-image: url('<?php echo $headerIMG ?>')" data-stellar-background-ratio="0.5">
     <div class="container">
       
-      <div class="title_header" data-stellar-ratio="1.5" data-stellar-vertical-offset="300">    
+      <div class="title_header" data-stellar-ratio="0.5" data-stellar-vertical-offset="-280">    
         <h1> 
           <?php the_field('name'); ?>
         </h1>
