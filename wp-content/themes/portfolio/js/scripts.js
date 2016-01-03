@@ -18,13 +18,13 @@ $(window).on('scroll',function(){
   var scrollHeight = $(window).scrollTop();
   var scrollPercentage =  (scrollHeight / windowHeight);
 
-  if (scrollPercentage > 0.5) {
+  if (scrollPercentage > 0.2) {
   	$('body').addClass('scrolling');
   } else {
   	$('body').removeClass('scrolling');
   }
 
-  if (scrollPercentage < 0.5) {
+  if (scrollPercentage < 0.2) {
     $('.home h2.logo').addClass('is_hidden');
   } else {
     $('.home h2.logo').removeClass('is_hidden');
